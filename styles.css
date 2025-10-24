@@ -1,0 +1,77 @@
+:root{
+  --bg:#0A0A0B;
+  --panel:#111217;
+  --text:#EAEAF0;
+  --muted:#A5A7AF;
+  --brand:#F59E0B;    /* warm gold/orange */
+  --brand-2:#FDBA74;  /* accent */
+  --ring: rgba(245,158,11,.35);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font:16px/1.6 ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial;
+  color:var(--text);
+  background: radial-gradient(1200px 600px at 30% 10%, #15161d 0%, var(--bg) 60%);
+}
+
+a{color:var(--brand); text-decoration:none}
+a:hover{color:var(--brand-2)}
+
+.nav{
+  max-width:1100px; margin:0 auto; padding:16px 20px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand{display:flex; align-items:center; gap:10px; color:var(--text); font-weight:700}
+.nav nav a{margin-left:16px; color:var(--muted)}
+.nav nav a:hover{color:var(--text)}
+
+.hero{
+  display:grid; place-items:center;
+  padding:56px 20px 28px;
+}
+.hero-inner{max-width:900px; text-align:center}
+.hero h1{
+  margin:10px 0 12px;
+  font-size:clamp(28px, 6vw, 48px);
+  letter-spacing:.2px;
+}
+.sub{color:var(--muted); margin:0 auto 22px; max-width:48ch}
+
+.cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:8px}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:12px 18px; border-radius:12px; border:1px solid transparent;
+  font-weight:700; letter-spacing:.2px; transition:.2s ease;
+}
+.btn-lg{padding:14px 22px; font-size:1.05rem}
+.btn-primary{background:linear-gradient(180deg, var(--brand), #d68406); color:#111}
+.btn-primary:hover{filter:brightness(1.05)}
+.btn-ghost{border-color:#2a2b33; color:var(--text); background:#0f1015}
+.btn-ghost:hover{border-color:#3a3b45}
+
+.trust{
+  list-style:none; padding:0; margin:18px 0 0;
+  display:flex; gap:16px; justify-content:center; color:var(--muted); flex-wrap:wrap
+}
+
+.section{padding:48px 20px}
+.section.muted{background:linear-gradient(180deg, #0f1015, #0b0c10)}
+.container{max-width:1100px; margin:0 auto}
+.grid{display:grid; gap:26px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.centered{text-align:center}
+.note{color:var(--muted); margin-top:10px}
+
+.footer{border-top:1px solid #1b1c22; background:#0b0c10}
+.footer-grid{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px 0; flex-wrap:wrap}
+.footer a{color:#9aa0aa}
+.footer a:hover{color:var(--text)}
+
+/* Accessibility */
+.btn:focus-visible, a:focus-visible{
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
